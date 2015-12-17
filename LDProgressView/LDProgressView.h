@@ -44,5 +44,6 @@ typedef enum {
 
 - (void)overrideProgressText:(NSString *)progressText;
 - (void)overrideProgressTextColor:(UIColor *)progressTextColor;
-
+- (void)overrideProgressTextFont:(UIFont *)progressFont;
+- (void)overrideProgressOutsideTextColor:(UIColor *)progressOutsideTextColor;
 @end
