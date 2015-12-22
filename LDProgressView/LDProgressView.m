@@ -244,10 +244,7 @@
     label.backgroundColor = [UIColor clearColor];
     label.text = self.progressTextOverride ? self.progressTextOverride : [NSString stringWithFormat:@"%.0f%%", self.progress*100];
     UIFont *font = self.progressTextFontOverride ? self.progressTextFontOverride : [UIFont systemFontOfSize:12];
-    CGSize size = [label.text sizeWithAttributes:@{NSFontAttributeName: font}];
-    float pointsPerPixel =  font.pointSize / size.height;
-
-    label.font = font;//[UIFont boldSystemFontOfSize:rect.size.height * pointsPerPixel];
+    label.font = font;
     UIColor *baseLabelColor = [self.color isLighterColor] ? [UIColor blackColor] : [UIColor whiteColor];
     label.textColor = self.progressTextColorOverride ? self.progressTextColorOverride : [baseLabelColor colorWithAlphaComponent:0.6];
 
