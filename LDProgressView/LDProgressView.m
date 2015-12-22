@@ -254,10 +254,10 @@
     label.textAlignment = self.textAlignment;
     CGFloat width = [label.text sizeWithAttributes:@{NSFontAttributeName: label.font}].width;
     if (rect.size.width > width+8) {
-        [label drawTextInRect:CGRectMake(rect.origin.x + 6, rect.origin.y, rect.size.width-12, rect.size.height)];
+        [label drawTextInRect:CGRectMake(rect.origin.x + 6, -2.5, rect.size.width-12, rect.size.height)];
     } else {
         label.textColor = self.progressOutsideTextColorOverride ? self.progressOutsideTextColorOverride : [baseLabelColor colorWithAlphaComponent:0.6];
-        [label drawTextInRect:CGRectMake(rect.origin.x + rect.size.width + 8, rect.origin.y, width, rect.size.height)];
+        [label drawTextInRect:CGRectMake(rect.origin.x + rect.size.width + 8, -2.5, width, rect.size.height)];
     }
 }
 
