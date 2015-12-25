@@ -250,12 +250,18 @@
 
     label.textAlignment = self.textAlignment;
     CGFloat width = [label.text sizeWithAttributes:@{NSFontAttributeName: label.font}].width;
-    if (rect.size.width > width+8) {
-        [label drawTextInRect:CGRectMake(rect.origin.x + 6, 0, rect.size.width-12, rect.size.height)];
+    
+    
+    if (rect.size.width > width + 8) {
     } else {
         label.textColor = self.progressOutsideTextColorOverride ? self.progressOutsideTextColorOverride : [baseLabelColor colorWithAlphaComponent:0.6];
-        [label drawTextInRect:CGRectMake(rect.origin.x + rect.size.width + 8, 0, width, rect.size.height)];
+//        [label setFrame:CGRectMake(0, 0, width, rect.size.height)];
+//        [label drawTextInRect:CGRectMake(rect.origin.x + rect.size.width + 8, 0, width, rect.size.height)];
     }
+    label.minimumScaleFactor = 0.7;
+    label.adjustsFontSizeToFitWidth = YES;
+    [label setFrame:CGRectMake(0, 0, rect.size.width - 12, rect.size.height)];
+    [label drawTextInRect:CGRectMake(rect.origin.x + 6, 0, rect.size.width - 12, rect.size.height)];
 }
 
 #pragma mark - Accessors
