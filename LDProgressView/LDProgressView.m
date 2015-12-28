@@ -258,7 +258,12 @@
 //        [label setFrame:CGRectMake(0, 0, width, rect.size.height)];
 //        [label drawTextInRect:CGRectMake(rect.origin.x + rect.size.width + 8, 0, width, rect.size.height)];
     }
-    label.minimumScaleFactor = 0.7;
+    if(rect.size.width > 12) {
+        label.minimumScaleFactor = 0.7;
+    }
+    else {
+        label.minimumScaleFactor = 1.0;
+    }
     label.adjustsFontSizeToFitWidth = YES;
     [label setFrame:CGRectMake(0, 0, rect.size.width - 12, rect.size.height)];
     [label drawTextInRect:CGRectMake(rect.origin.x + 6, 0, rect.size.width - 12, rect.size.height)];
