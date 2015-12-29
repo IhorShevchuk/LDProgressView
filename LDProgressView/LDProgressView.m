@@ -265,8 +265,8 @@
         label.minimumScaleFactor = 1.0;
     }
     label.adjustsFontSizeToFitWidth = YES;
-    [label setFrame:CGRectMake(0, 0, rect.size.width - 12, rect.size.height)];
-    [label drawTextInRect:CGRectMake(rect.origin.x + 6, 0, rect.size.width - 12, rect.size.height)];
+    [label setFrame:CGRectMake(0, 0, width, rect.size.height)];
+    [label drawTextInRect:CGRectMake(rect.origin.x + 6, 0, width, rect.size.height)];
 }
 
 #pragma mark - Accessors
